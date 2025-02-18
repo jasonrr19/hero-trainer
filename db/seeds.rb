@@ -10,60 +10,62 @@
 
 
 # Create Users (Training Partners)
-goku = User.create!(
-  name: "Goku",
-  email: "goku@example.com",  # Required by Devise
-  password: "password123",    # Required by Devise
-  bio: "Saiyan warrior, always seeking stronger opponents.",
-  experience: "Mastered Ultra Instinct",
-  specialties: "Martial Arts, Ki Control, Super Strength"
-)
+Booking.destroy_all
+Lesson.destroy_all
+User.destroy_all
 
-bruce_lee = User.create!(
-  name: "Bruce Lee",
-  email: "bruce@example.com",  # Required by Devise
-  password: "password123",      # Required by Devise
-  bio: "Martial arts legend and creator of Jeet Kune Do.",
-  experience: "Master of Jeet Kune Do",
-  specialties: "Speed, Agility, Combat Strategy"
-)
+20.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.unique.email,
+    password: 'password123',
+    bio: Faker::Lorem.sentence,
+    experience: "#{Faker::Number.between(from: 1, to: 20)} years in #{Faker::Job.field}",
+    specialties: [
+      Faker::Job.key_skill,
+      Faker::Job.position,
+      Faker::Job.employment_type
+    ]
+  )
+end
 
-# Create Lessons
-goku_lesson = Lesson.create!(
-  title: "Train with Goku in the Hyperbolic Time Chamber",
-  description: "Push your limits with Goku's Saiyan-style training.",
-  duration: 600,
-  location: "Hyperbolic Time Chamber",
-  price: 50,
-  capacity: 2,
-  user: goku
-)
+puts "Created #{User.count} users"
 
-bruce_lee_lesson = Lesson.create!(
-  title: "Jeet Kune Do Masterclass with Bruce Lee",
-  description: "Learn Jeet Kune Do techniques and philosophy with the master himself.",
-  duration: 600,
-  location: "Dojo",
-  price: 75,
-  capacity: 3,
-  user: bruce_lee
-)
+users = User.all
+lessons = Lesson.all
+
+users.each do |user|
+  2.times do
+    user.lessons.create!(
+      title: Faker::Team.sport,
+      description: Faker::Lorem.sentence(word_count: 10),
+      duration: Faker::Number.between(from: 30, to: 120),
+      location: Faker::Address.city,
+      price: Faker::Number.between(from: 0, to: 200),
+      capacity: Faker::Number.between(from: 5, to: 30)
+    )
+  end
+end
+
+puts "Created #{Lesson.count} lessons"
 
 # Create Bookings
-Booking.create!(
-  start_time: Time.now + 3.days,
-  status: "confirmed",
-  participants: 1,
-  user: goku, # Simulating Goku booking Bruce Lee’s lesson
-  lesson: bruce_lee_lesson
-)
+# Booking.create!(
+#   start_time: Time.now + 3.days,
+#   status: "pending",
+#   participants: 1,
+#   user_id: User.pluck(:id).sample,
+#   lesson_id: Lesson.pluck(:id).sample
+# )
 
+30.times do
 Booking.create!(
-  start_time: Time.now + 5.days,
-  status: "pending",
+  start_time: Time.now + rand(0..5).days,
+  status: "accepted",
   participants: 2,
-  user: bruce_lee, # Simulating Bruce Lee booking Goku’s lesson
-  lesson: goku_lesson
+  user: users.sample,
+  lesson: lessons.sample
 )
+end
 
-puts "Seed data for Goku and Bruce Lee created successfully!"
+puts "Created #{Booking.count} bookings"
