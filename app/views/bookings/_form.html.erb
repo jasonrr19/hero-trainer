@@ -1,0 +1,7 @@
+<%= simple_form_for [@lesson, @booking] do |f| %>
+<%= f.input :title %>
+<%= f.input :date %>
+<%= f.input :start_time %>
+<%= f.input :price %>
+<%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
+<% end %>
