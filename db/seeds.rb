@@ -8,6 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Booking.destroy_all
+Lesson.destroy_all
+User.destroy_all
 
 # Create Users (Training Partners)
 Booking.destroy_all
