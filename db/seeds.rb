@@ -17,11 +17,26 @@ Booking.destroy_all
 Lesson.destroy_all
 User.destroy_all
 
+puts "Creating admin ... "
+User.create!(
+  name: "admin",
+  email: "admin@admin.com",
+  password: '123123',
+  bio: Faker::Lorem.sentence,
+  experience: "#{Faker::Number.between(from: 1, to: 20)} years in #{Faker::Job.field}",
+  specialties: [
+    Faker::Job.key_skill,
+    Faker::Job.position,
+    Faker::Job.employment_type
+  ]
+)
+puts "Admin created"
+
 20.times do
   User.create!(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
-    password: 'password123',
+    password: '123123',
     bio: Faker::Lorem.sentence,
     experience: "#{Faker::Number.between(from: 1, to: 20)} years in #{Faker::Job.field}",
     specialties: [
