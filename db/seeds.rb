@@ -49,15 +49,6 @@ end
 
 puts "Created #{Lesson.count} lessons"
 
-# Create Bookings
-# Booking.create!(
-#   start_time: Time.now + 3.days,
-#   status: "pending",
-#   participants: 1,
-#   user_id: User.pluck(:id).sample,
-#   lesson_id: Lesson.pluck(:id).sample
-# )
-
 30.times do
 Booking.create!(
   start_time: Time.now + rand(0..5).days,
