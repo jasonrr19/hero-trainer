@@ -1,2 +1,60 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <div class="card-category m-4 p-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+    <p>Hero Trainer is a platform that connects users with elite training partners for personalized workouts and skill development. Whether you're looking to improve your martial arts, strength training, or combat skills, Hero Trainer helps you find the right partner to challenge and motivate you.</p>
+  </div>
+
+  <div>
+    <div class="text-center"><p>Explore popular classes</p></div>
+      <div class="cards mx-5">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          Breakfast
+        </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
+         Lunch
+        </div>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+          Dinner
+        </div>
+    </div>
+
+    <div class="container mt-4">
+      <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="card m-5 d-flex justify-content-between align-items-center">
+    <div class="text-black text-center mt-3"><p>Explore top trainers</p></div>
+    <div class="cards m-5 ">
+      <% @users.each do |user| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
+      <%= user.name %>
+      </div>
+      <% end %>
+    </div>
+
+      <div class="container mb-4">
+      <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      </div>
+  </div>
+
+  <div class="card m-5">
+    <div class="cards m-3">
+          <div><p>Name</p></div>
+      <div>
+      <p>Email</p>
+      <p>sign-up</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card m-5"><p>HEADER</p></div>
+
+</div>

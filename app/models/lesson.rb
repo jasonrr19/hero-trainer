@@ -8,4 +8,5 @@ class Lesson < ApplicationRecord
   validates :location, presence: true
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :capacity, numericality: { only_integer: true, greater_than: 0 }
+  has_many :photos
 end
