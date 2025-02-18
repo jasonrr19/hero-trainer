@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :lessons, only: [:index, :show, :new, :create] do
-   resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create]
   end
 
   namespace :trainer do
@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :show]
 
+
+  get 'dashboard', to: 'dashboard#dashboard'
   # Defines the root path route ("/")
   # root "posts#index"
 end

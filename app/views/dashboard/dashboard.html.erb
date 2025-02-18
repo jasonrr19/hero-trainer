@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex my-5">
+    <div class="border rounded-4  me-5 p-4">
+      <div class="">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="" width="120px" class="rounded-circle mb-4
+        ">
+        <h2 class="mb-2"><%= current_user.name %></h2>
+      </div>
+
+      <div>
+        <h5>Bio:</h5>
+        <p class="ps-2"><%= current_user.bio %></p>
+      </div >
+      <div>
+        <h5>Experience:</h5>
+        <p class="ps-2 list-group-item"><%= current_user.experience %></p>
+      </div>
+      <div>
+        <h5>Specialties:</h5>
+        <p class="ps-2"><%= current_user.specialties %></p>
+      </div>
+    </div>
+
+    <div class="overflow-scroll">
+      <% @bookings.each do |booking| %>
+        <div class="card p-3 mb-3">
+            <div class="card-title" >
+              <h5><%= booking.lesson.title %></h5>
+            </div>
+
+            <div class="card-text">
+              <p><%= booking.lesson.description %></p>
+            </div>
+
+            <div class=" justify-content-between">
+              <p><em><%= booking.lesson.location %></em></p>
+              <h6><em><%= booking.lesson.price %>$</em></h6>
+            </div>
+        </div>
+      <% end %>
+    </div>
+
+    </div>
+
+  </div>
+</div>
