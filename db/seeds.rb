@@ -8,6 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Booking.destroy_all
+Lesson.destroy_all
+User.destroy_all
 
 # Create Users (Training Partners)
 goku = User.create!(
@@ -50,20 +53,22 @@ bruce_lee_lesson = Lesson.create!(
 )
 
 # Create Bookings
-Booking.create!(
+booking = Booking.new(
   start_time: Time.now + 3.days,
-  status: "confirmed",
+  status: "accepted",
   participants: 1,
   user: goku, # Simulating Goku booking Bruce Lee’s lesson
-  lesson: bruce_lee_lesson
 )
 
-Booking.create!(
+booking.lesson = bruce_lee_lesson
+booking.save
+booking2 = Booking.new(
   start_time: Time.now + 5.days,
   status: "pending",
   participants: 2,
   user: bruce_lee, # Simulating Bruce Lee booking Goku’s lesson
-  lesson: goku_lesson
 )
 
+booking2.lesson = goku_lesson
+booking2.save
 puts "Seed data for Goku and Bruce Lee created successfully!"
