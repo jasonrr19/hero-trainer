@@ -8,14 +8,29 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+<<<<<<< Updated upstream
 Booking.destroy_all
+=======
+>>>>>>> Stashed changes
 Lesson.destroy_all
 User.destroy_all
 
 # Create Users (Training Partners)
+<<<<<<< Updated upstream
 Booking.destroy_all
 Lesson.destroy_all
 User.destroy_all
+=======
+
+goku = User.create!(
+  name: "Goku",
+  email: "goku@example.com",  # Required by Devise
+  password: "password123",    # Required by Devise
+  bio: "Saiyan warrior, always seeking stronger opponents.",
+  experience: "Mastered Ultra Instinct",
+  specialties: "Martial Arts, Ki Control, Super Strength"
+)
+>>>>>>> Stashed changes
 
 puts "Creating admin ... "
 User.create!(
@@ -69,8 +84,21 @@ puts "Created #{Lesson.count} lessons"
 
 30.times do
 Booking.create!(
+<<<<<<< Updated upstream
   start_time: Time.now + rand(0..5).days,
   status: "accepted",
+=======
+  start_time: Time.now + 3.days,
+
+  participants: 1,
+  user: goku, # Simulating Goku booking Bruce Lee’s lesson
+  lesson: bruce_lee_lesson
+)
+
+Booking.create!(
+  start_time: Time.now + 5.days,
+
+>>>>>>> Stashed changes
   participants: 2,
   user: users.sample,
   lesson: lessons.sample
