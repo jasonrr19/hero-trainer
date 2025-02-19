@@ -3,6 +3,12 @@ class LessonsController < ApplicationController
 
   def index
     @lessons = Lesson.all
+    @markers = @lessons.geocoded.map do |lesson|
+      {
+        lat: lesson.latitude,
+        lng: lesson.longitude
+      }
+    end
   end
 
   def show

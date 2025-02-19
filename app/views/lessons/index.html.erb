@@ -31,6 +31,14 @@
         </div>
       <% end %>
     </div>
-    <div class="col-4 map-container"></div>
+    <div class="col-4">
+    <div class="map-container">
+      <div class="map-view"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+    </div>
   </div>
 </div>
