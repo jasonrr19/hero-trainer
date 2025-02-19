@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <div class="overflow-scroll">
+    <div class="overflow-scroll" style="height: 70vh;">
       <% @bookings.each do |booking| %>
         <div class="card p-3 mb-3">
             <div class="card-title" >
@@ -30,6 +30,7 @@
 
             <div class="card-text">
               <p><%= booking.lesson.description %></p>
+              <p><%= booking.start_time.strftime("%b %e, %l:%M %p") %></p>
             </div>
 
             <div class=" justify-content-between">
