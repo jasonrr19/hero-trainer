@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
 
   def create
-    @booking = @lesson.booking.new(booking_params)
+    @lesson = Lesson.find(params[:lesson_id])
+    @booking = Booking.new(booking_params)
+    @booking.lesson = @lesson
     @booking.user = current_user
-
+    raise
     if @booking.save
       redirect_to lesson_path(@lesson), notice: "Booking Successful!"
     else
@@ -14,6 +16,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:title,:date, :start_time, :price)
+    params.require(:booking).permit(:start_time, :participants)
   end
 end
