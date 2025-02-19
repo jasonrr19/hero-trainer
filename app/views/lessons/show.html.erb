@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-8">
       <div class="card-product">
@@ -7,39 +7,44 @@
           <p><strong><%= @lesson.price %></strong></p>
         </div>
       </div>
-
-
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Description</h5>
-    <p class="card-text"><%= @lesson.description %></p>
-  </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <p class="card-text"><strong>Duration:</strong><%= @lesson.duration %></p>
-  </div>
-</div>
-<div class="card">
-  <div class="card-body">
-    <p class="card-text"><strong>Capacity:</strong><%= @lesson.capacity %></p>
-  </div>
-</div>
-    </div>
-
- <div class="card-product">
-        <div class="card-product-infos">
-          <h2><%= @trainer.name %></h2>
-          <p><strong><%= @lesson.price %></strong></p>
-          <%# <%= %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Description</h5>
+          <p class="card-text"><%= @lesson.description %></p>
         </div>
       </div>
-
-
-    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><strong>Duration:</strong><%= @lesson.duration %></p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><strong>Capacity:</strong><%= @lesson.capacity %></p>
+        </div>
+      </div>
+    </div>
+    <div class="card-product w-25 ms-2 border">
+      <div class="card-product-infos">
+        <h2><%= @trainer.name %></h2>
+        <p><strong><%= @lesson.price %></strong></p>
+        <h6>Average Rating:<%= "⭐⭐⭐⭐"  %></h3>
+        <h6 class="text-center">Recent Reviews!</h6>
+        <div class="row">
+          <div class="col-sm">
+            I'm still sore all over!
+          </div>
+          <div class="col-sm">
+            My muscles are huge!
+          </div>
+        </div>
+        <%= link_to "Book Now!", new_lesson_booking_path(@lesson), class: "btn btn-ghost" %>
+      </div>
+      <!-- <div class="col-4 border">
       <div><%= @trainer.name %></div>
     </div>
   </div>
   <%# <div class="card-category repeat-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : image_path('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU'))"> %>
   <%# </div> %>
 </div>
+-->
