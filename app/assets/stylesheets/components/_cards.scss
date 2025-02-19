@@ -26,6 +26,13 @@
   transition: transform 0.2s ease-in-out;
   text-decoration: none;
 }
+
+
+.btn-trainer {
+  background-color: #2B4864;
+  color: white;
+}
+
 .card-product a:hover {
   transform: scale(1.03);
   background-color: #e0f1ff;
