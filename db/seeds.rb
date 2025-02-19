@@ -14,6 +14,16 @@ Booking.destroy_all
 Lesson.destroy_all
 User.destroy_all
 
+CATEGORIES = ["Yoga", "Pilates", "CrossFit", "Martial Arts", "Tennis", "Swimming", "Cycling", "Boxing"]
+JAPAN_CITIES = [
+  "Tokyo", "Osaka", "Kyoto", "Yokohama", "Nagoya", "Fukuoka", "Sapporo",
+  "Hiroshima", "Sendai", "Kobe", "Naha"
+]
+
+def japan_address
+  "#{Faker::Address.street_address}, #{JAPAN_CITIES.sample}, Japan"
+end
+
 puts "Creating admin ... "
 User.create!(
   name: "admin",
@@ -55,9 +65,10 @@ users.each do |user|
       title: Faker::Team.sport,
       description: Faker::Lorem.sentence(word_count: 10),
       duration: Faker::Number.between(from: 30, to: 120),
-      location: Faker::Address.city,
       price: Faker::Number.between(from: 0, to: 200),
-      capacity: Faker::Number.between(from: 5, to: 30)
+      capacity: Faker::Number.between(from: 5, to: 30),
+      category: CATEGORIES.sample,
+      address: "#{Faker::Address.street_address}, #{JAPAN_CITIES.sample}, Japan"
     )
   end
 end
