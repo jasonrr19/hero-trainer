@@ -13,14 +13,22 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-product {
+.card-product a {
   overflow: hidden;
   height: 120px;
   background: white;
+  color: black;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none;
+}
+.card-product a:hover {
+  transform: scale(1.03);
+  background-color: #e0f1ff;
 }
 
 .card-product img {
