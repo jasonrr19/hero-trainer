@@ -1,0 +1,15 @@
+<div class="container my-5">
+  <h1>Make a booking</h1>
+  <div class="card rounded-4 p-3 mb-3">
+    <h3><%= @lesson.title %></h3>
+    <p><%= @lesson.description %></p>
+    <p><%= @lesson.capacity %> people</p>
+    <div class="d-flex justify-content-between text-start">
+      <p><%= @lesson.duration %> minutes</p>
+      <h6><b><%= @lesson.price %>$</b></h6>
+    </div>
+    <h6><em><%= @lesson.address %></em></h6>
+  </div>
+
+  <%= render 'bookings/form' %>
+</div>
