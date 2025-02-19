@@ -1,5 +1,5 @@
 <%= simple_form_for [@lesson, @booking] do |f| %>
 <%= f.input :participants, placeholder: 'How many participants?' %>
-<%= f.input :start_time %>
+<%= f.input :start_time, as: :datetime, html5: true %>
 <%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
 <% end %>
