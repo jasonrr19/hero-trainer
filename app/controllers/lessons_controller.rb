@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
 
   def show
     @lesson = Lesson.find(params[:id])
-
+    @trainer = @lesson.user
   end
 
 end
