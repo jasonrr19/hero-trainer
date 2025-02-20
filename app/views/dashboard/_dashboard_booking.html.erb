@@ -1,0 +1,36 @@
+<% @bookings.each do |booking| %>
+  <div class="card-booking">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+    <div class="card-booking-infos">
+      <div class="d-flex justify-content-between">
+        <h2>
+          <%= booking.lesson.title %>
+        </h2>
+
+        <% if booking.status == 'accepted' %>
+          <span class="badge rounded-pill text-bg-success fw-medium">
+            <%= booking.status %>
+            </span>
+          <% elsif booking.status == 'rejected' %>
+            <span class="badge rounded-pill text-bg-danger fw-medium"><%= booking.status %></span>
+          <% else %>
+            <span class="badge rounded-pill text-bg-secondary fw-medium"><%= booking.status %></span>
+        <% end %>
+      </div>
+      <p>
+        <%= booking.lesson.category %>
+      </p>
+      <p>
+        <%= booking.lesson.description %>
+      </p>
+      <p>
+        <%= booking.lesson.capacity %> people
+      </p>
+      <%# <%= raise %>
+      <div class="d-flex justify-content-between">
+        <p><%= booking.lesson.duration %> minutes</em></p>
+        <h6><b><%= booking.lesson.price %>$</b></h6>
+      </div>
+    </div>
+  </div>
+<% end %>
