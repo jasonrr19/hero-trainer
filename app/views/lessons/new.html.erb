@@ -1,0 +1,15 @@
+<div class="booking-form text-white my-5">
+  <div class="form-header">
+    <h2 class>Make a booking</h2>
+  </div>
+
+  <form>
+    <h3><%= @lesson.title.capitalize %></h3>
+    <p><%= @lesson.description %></p>
+    <p>Capacity: <%= @lesson.capacity %> people</p>
+    <p>Duration: <%= @lesson.duration %> minutes</p>
+    <h6>Price: <b><%= @lesson.price %>$</b></h6>
+  </form>
+  <%= render 'bookings/form' %>
+
+</div>

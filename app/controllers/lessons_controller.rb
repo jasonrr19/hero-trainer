@@ -16,4 +16,14 @@ class LessonsController < ApplicationController
     @trainer = @lesson.user
   end
 
+  def new
+    @lesson = Lesson.new
+    @Lesson.user = current_user
+  end
+
+  private
+  def lesson_params
+    params.require(:lesson).permit(:title, :description, :duration, :address, :price, :capacity)
+  end
+
 end
