@@ -62,7 +62,7 @@ lessons = Lesson.all
 users.each do |user|
   2.times do
     user.lessons.create!(
-      title: Faker::Team.sport,
+      title: Faker::Team.sport.capitalize,
       description: Faker::Lorem.sentence(word_count: 10),
       duration: Faker::Number.between(from: 30, to: 120),
       price: Faker::Number.between(from: 0, to: 200),
