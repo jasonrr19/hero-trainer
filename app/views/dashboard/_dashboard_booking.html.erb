@@ -4,7 +4,7 @@
     <div class="card-booking-infos">
       <div class="d-flex justify-content-between">
         <h2>
-          <%= booking.lesson.title %>
+          <%= booking.lesson.title.capitalize %>
         </h2>
 
         <% if booking.status == 'accepted' %>
@@ -17,19 +17,22 @@
             <span class="badge rounded-pill text-bg-secondary fw-medium"><%= booking.status %></span>
         <% end %>
       </div>
+
+      <p><%= booking.lesson.category %></p>
+
+      <p><%= booking.lesson.description %></p>
+
       <p>
-        <%= booking.lesson.category %>
+        <i class="fa-solid fa-person"></i>
+        <%= booking.lesson.capacity %>
       </p>
-      <p>
-        <%= booking.lesson.description %>
-      </p>
-      <p>
-        <%= booking.lesson.capacity %> people
-      </p>
-      <%# <%= raise %>
       <div class="d-flex justify-content-between">
-        <p><%= booking.lesson.duration %> minutes</em></p>
-        <h6><b><%= booking.lesson.price %>$</b></h6>
+        <p>
+          <i class="fa-solid fa-clock"></i>
+          <%= booking.lesson.duration %> minutes
+        </p>
+
+        <span class="fs-6">$<%= booking.lesson.price %></span>
       </div>
     </div>
   </div>
