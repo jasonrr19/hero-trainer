@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
   validates :address, presence: true
   validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
   validates :capacity, numericality: { only_integer: true, greater_than: 0 }
-  has_many :photos
+  has_many_attached :photos
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 end

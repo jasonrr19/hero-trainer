@@ -11,10 +11,11 @@ class BookingsController < ApplicationController
     @booking.lesson = @lesson
     @booking.user = current_user
     if @booking.save
-      redirect_to dashboard_path, notice: "Booking Successful!"
+      redirect_to dashboard_path, notice: "Booking requested"
     else
       render :new, status: :unprocessable_entity
     end
+    # a
   end
 
   private

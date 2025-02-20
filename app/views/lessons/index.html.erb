@@ -19,7 +19,11 @@
       <% @lessons.each do |lesson| %>
         <div class="card-product mx-3 mb-2">
           <%= link_to lesson_path(lesson) do %>
-            <img src="">
+            <% if lesson.photos.attached? %>
+  <%= cl_image_tag lesson.photos.first.key, height: 300, width: 400, crop: :fill %>
+<% else %>
+  <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
+<% end %>
             <div class="card-product-infos">
               <%= lesson.title.titleize %>
               <br>

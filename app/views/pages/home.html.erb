@@ -1,12 +1,5 @@
 <div>
-  <!-- <div class="card-category m-4 p-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))">
-
-    <p>Hero Trainer is a platform that connects users with elite training partners for personalized workouts and skill development. Whether you're looking to improve your martial arts, strength training, or combat skills, Hero Trainer helps you find the right partner to challenge and motivate you.</p>
-  </div>
-  -->
-
-  <%# <div class="d-flex justify-content-between align-items-between"> %>
-  <div class="hero-banner d-flex flex-column justify-content-center align-items-between py-4 text-white">
+  <div class="hero-banner d-flex flex-column justify-content-center align-items-between py-4 text-white" style="background-image: url(<%= image_path "home-page.png" %>);">
     <div class="w-50">
       <h2 class="fw-bold ms-5">Hero Trainer is a platform that connects users with elite training partners for personalized workouts and skill development. </h2>
     </div>
@@ -31,16 +24,82 @@
       </div>
       <% end %>
     </div>
+  </div>
 
-      <div class="container mb-4">
-      <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-primary" type="submit">Search</button>
-      </form>
+  <div class="container d-flex my-5">
+    <div class="col-md-6 d-flex">
+      <%= image_tag 'gym.png', class: 'w-100' %>
+    </div>
+    <div class="row col-md-6 mx-5">
+      <div class="d-flex my-2">
+        <div>
+          <%= image_tag 'flow1.png', class: 'me-4',style: 'max-width: 70px; height: auto;'%>
+        </div>
+        <div >
+        <h5><b>① At any time</b></h5>
+        <p>Please come at any time during business hours. Once you have put your belongings away and changed your clothes, you can use the available space to warm up.</p>
+        </div>
       </div>
+      <div class="d-flex my-2">
+        <div>
+          <%= image_tag 'flow2.png', class: 'me-4', style: 'max-width: 70px; height: auto;'%>
+        </div>
+        <div>
+        <h5><b>②Select the round to start</b></h5>
+        <p>Choose an available round to start your workout. Check the coaching screen to see what kind of exercise you'll be doing and get ready.</p>
+        </div>
+      </div>
+      <div class="d-flex my-2">
+        <div>
+          <%= image_tag 'flow3.png', class: 'me-4', style: 'max-width: 70px; height: auto;'%>
+        </div>
+        <div>
+         <h5><b>③Start your workout</b></h5>
+         <p>Boxing round: punching the punching bag / pad punching. Strength round: training to improve physical function</p>
+        </div>
+      </div>
+      <div class="d-flex my-2">
+        <div>
+          <%= image_tag 'flow4.png', class: 'me-4', style: 'max-width: 70px; height: auto;' %>
+        </div>
+        <div>
+          <h5><b>4. Finish your workout with a fist bump</b></h5>
+          <p>Once you've completed 12 rounds, enjoy the endorphins rush.</p>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-  <div class="card m-5"><p>Footer</p></div>
+  <div class="container mt-5">
+    <div class="row text-center">
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">Work out as soon as you get to the location</p>
+        <p>The appeal of Hero Trainer is that you can book a trainer whenever you want and start your workout whenever you want.</p>
+      </div>
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">A new workout every day</p>
+        <p>A unique training workout. A new workout every day, so you'll never get bored!</p>
+      </div>
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">Private lessons and group workouts</p>
+        <p>Our trainers will provide individualized instruction for each member. With one-on-one help with form correction and performance, it's a comfortable workout that's suitable for everyone!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card bg-black text-white">
+    <div class="container">
+      <div class="row text-center my-5">
+      <div class="col-md-6">
+        <p class="fw-bold">HT</p>
+        <p>Location Shibuya</p>
+      </div>
+      <div class="col-md-2 d-flex flex-column"><p>Menu</p></div>
+      <div class="col-md-2 d-flex flex-column"><p>Any</p></div>
+      <div class="col-md-2 d-flex flex-column"><p>Privary & Legal</p></div>
+    </div>
+    </div>
+  </div>
 
 </div>
