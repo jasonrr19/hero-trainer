@@ -6,14 +6,15 @@
   -->
 
   <%# <div class="d-flex justify-content-between align-items-between"> %>
-  <div class="d-flex justify-content-center align-items-between py-4 bg-black gap-4">
-    <img src="/assets/home1.png" alt="">
-    <img src="/assets/home2.png" alt="">
-    <img src="/assets/home3.png" alt="">
+  <div class="hero-banner d-flex flex-column justify-content-center align-items-between py-4 text-white">
+    <div class="w-50">
+      <h2 class="fw-bold ms-5">Hero Trainer is a platform that connects users with elite training partners for personalized workouts and skill development. </h2>
+    </div>
   </div>
 
+
   <div>
-    <div class="text-center"><p>Explore popular classes</p></div>
+    <div class="text-center mt-4"><h3><b>Explore popular classes</b></h3></div>
 
     <%= render "slider" %>
 
@@ -39,7 +40,35 @@
       </div>
   </div>
 
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">Work out as soon as you get to the location</p>
+        <p>The appeal of Hero Trainer is that you can book a trainer whenever you want and start your workout whenever you want.</p>
+      </div>
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">A new workout every day</p>
+        <p>A unique training workout. A new workout every day, so you'll never get bored!</p>
+      </div>
+      <div class="col-md-4 d-flex flex-column">
+        <p class="fw-bold">Private lessons and group workouts</p>
+        <p>Our trainers will provide individualized instruction for each member. With one-on-one help with form correction and performance, it's a comfortable workout that's suitable for everyone!</p>
+      </div>
+    </div>
+  </div>
 
-  <div class="card m-5"><p>Footer</p></div>
+  <div class="card bg-black text-white">
+    <div class="container">
+      <div class="row text-center my-5">
+      <div class="col-md-6">
+        <p class="fw-bold">HT</p>
+        <p>Location Shibuya</p>
+      </div>
+      <div class="col-md-2 d-flex flex-column"><p>Menu</p></div>
+      <div class="col-md-2 d-flex flex-column"><p>Any</p></div>
+      <div class="col-md-2 d-flex flex-column"><p>Privary & Legal</p></div>
+    </div>
+    </div>
+  </div>
 
 </div>
