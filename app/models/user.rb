@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :lessons
   has_many :reviews, through: :lessons
   validates :name, presence: true, uniqueness: true
-  validates :bio, presence: true, length: { minimum: 10, maximum: 360 }
+  validates :bio, length: { minimum: 10, maximum: 360 }
   validates :experience, length: { minimum: 10, maximum: 500 }
   validates :specialties, length: { minimum: 10, maximum: 200 }
   has_many :photos
