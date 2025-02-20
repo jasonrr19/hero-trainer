@@ -1,10 +1,11 @@
 <div class="container">
-  <div class="d-flex my-5">
-    <div class="border rounded-4  me-5 p-4">
-      <div class="">
+  <div class="d-flex justify-content-evenly my-5">
+    <div class="border rounded-4 p-4" style="background-color: #F4F4F4;">
+      <div class="align-items-center">
         <img src="https://static.vecteezy.com/system/resources/thumbnails/005/129/844/small_2x/profile-user-icon-isolated-on-white-background-eps10-free-vector.jpg" alt="" width="120px" class="rounded-circle mb-4
         ">
         <h2 class="mb-2"><%= current_user.name %></h2>
+        <p><%= current_user.email %></p>
       </div>
 
       <div>
@@ -21,25 +22,8 @@
       </div>
     </div>
 
-    <div class="overflow-scroll" style="height: 70vh;">
-      <% @bookings.each do |booking| %>
-        <div class="card p-3 mb-3">
-            <div class="card-title" >
-              <h5><%= booking.lesson.title %></h5>
-            </div>
-
-            <div class="card-text">
-              <p><%= booking.lesson.description %></p>
-              <p><%= booking.start_time.strftime("%b %e, %l:%M %p") %></p>
-              <p><%= booking.lesson.duration %> minutes</p>
-            </div>
-
-            <div class=" justify-content-between">
-              <p><em><%= booking.lesson.address %></em></p>
-              <h6><em><%= booking.lesson.price %>$</em></h6>
-            </div>
-        </div>
-      <% end %>
+    <div class="overflow-scroll" style="height: 500px">
+      <%= render "dashboard_booking" %>
     </div>
 
     </div>

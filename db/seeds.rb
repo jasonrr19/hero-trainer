@@ -26,7 +26,7 @@ end
 
 puts "Creating admin ... "
 User.create!(
-  name: "admin",
+  name: "Arnie",
   email: "admin@admin.com",
   password: '123123',
   bio: Faker::Lorem.sentence,
@@ -35,7 +35,7 @@ User.create!(
     Faker::Job.key_skill,
     Faker::Job.position,
     Faker::Job.employment_type
-  ]
+  ].join(", ")
 )
 puts "Admin created"
 
@@ -50,7 +50,7 @@ puts "Admin created"
       Faker::Job.key_skill,
       Faker::Job.position,
       Faker::Job.employment_type
-    ]
+    ].join(", ")
   )
 end
 
