@@ -2,7 +2,7 @@
   <div class="form-header">
     <h2 class>Create a lesson</h2>
   </div>
-  <%= simple_form_for @lesson do |f| %>
+  <%= simple_form_for [@user, @lesson] do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :duration %>

@@ -21,8 +21,8 @@ class LessonsController < ApplicationController
   end
 
   def create
-    @Lesson.user = current_user
     @lesson = Lesson.new(lesson_params)
+    @lesson.user = current_user
     if @lesson.save
       redirect_to trainer_bookings_path, notice: "Lesson made!"
     else
