@@ -54,6 +54,17 @@ trainers = [
     image: "https://upload.wikimedia.org/wikipedia/commons/0/05/Arnold_Schwarzenegger_1974.jpg"
   },
   {
+    name: "Lisa (BLACKPINK)",
+    email: "lisa@hero.com",
+    password: "123123",
+    bio: "A world-famous K-pop idol and dancer, Lisa is known for her precision, fluidity, and stage presence in high-energy choreography.",
+    experience: "Over a decade of professional dance training and performances.",
+    specialties: "Hip-Hop Dance, Flexibility, Rhythm",
+    category: "Dance",
+    address: "日本, 〒150-0002 東京都渋谷区渋谷１丁目１０番３号",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Blackpink%27s_Lisa_Manoban_05.jpg'
+  },
+  {
     name: "Baki Hanma",
     email: "baki@hero.com",
     password: "123123",
@@ -63,17 +74,6 @@ trainers = [
     category: "Combat Training",
     address: "日本, 〒150-0031 東京都渋谷区桜丘町９番１２号",
     image: "https://i.pinimg.com/736x/88/e3/4a/88e34a0b78b1dde29b84845a3f83e144.jpg"
-  },
-  {
-    name: "Usain Bolt",
-    email: "usain@hero.com",
-    password: "123123",
-    bio: "The fastest man in history, Usain Bolt is an Olympic champion known for his explosive speed and unmatched sprinting technique.",
-    experience: "Over 15 years of professional sprinting and Olympic competition.",
-    specialties: "Sprinting, Acceleration, Endurance",
-    category: "Sprinting",
-    address: "日本, 〒150-0044 東京都渋谷区円山町２番９号",
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Usain_Bolt_Rio_100m_final_2016k.jpg"
   },
   {
     name: "All Might",
@@ -154,15 +154,15 @@ trainers = [
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/DavidGogginsMay08.jpg"
   },
   {
-    name: "Lisa (BLACKPINK)",
-    email: "lisa@hero.com",
+    name: "Usain Bolt",
+    email: "usain@hero.com",
     password: "123123",
-    bio: "A world-famous K-pop idol and dancer, Lisa is known for her precision, fluidity, and stage presence in high-energy choreography.",
-    experience: "Over a decade of professional dance training and performances.",
-    specialties: "Hip-Hop Dance, Flexibility, Rhythm",
-    category: "Dance",
-    address: "日本, 〒150-0002 東京都渋谷区渋谷１丁目１０番３号",
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Blackpink%27s_Lisa_Manoban_05.jpg'
+    bio: "The fastest man in history, Usain Bolt is an Olympic champion known for his explosive speed and unmatched sprinting technique.",
+    experience: "Over 15 years of professional sprinting and Olympic competition.",
+    specialties: "Sprinting, Acceleration, Endurance",
+    category: "Sprinting",
+    address: "日本, 〒150-0044 東京都渋谷区円山町２番９号",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Usain_Bolt_Rio_100m_final_2016k.jpg"
   }
 ]
 

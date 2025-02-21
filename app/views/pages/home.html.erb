@@ -1,6 +1,6 @@
 <div class="hero-trainer">
   <div class="card-trip bg-black">
-    <%= image_tag 'home-page.png', style: 'max-width: auto; height: 800px;' %>
+    <%= image_tag 'home-page.png', style: 'max-width: auto; height: 79vh;' %>
   <div class="bg-black">
     <div>
       <h4 class="fw-bold text-white text-center">Hero Trainer is a platform that connects users with elite training partners <br>for personalized workouts and skill development</h4>
@@ -12,7 +12,7 @@
   <div>
     <div class="text-center mt-4"><h3><b>Explore popular trainers</b></h3></div>
 
-    <%= render "slider" %>
+    <%= render "slider", locals: {users: @users }  %>
 
     <div class="container mt-4">
      <%= link_to "Browse Lessons", lessons_path, class: "btn btn-primary" %>
