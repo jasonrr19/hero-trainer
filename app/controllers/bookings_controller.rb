@@ -15,12 +15,16 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    # a
   end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+  end
+end
 
   private
 
   def booking_params
     params.require(:booking).permit(:start_time, :participants)
   end
-end

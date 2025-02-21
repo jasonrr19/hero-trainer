@@ -1,34 +1,28 @@
 <div>
-<% lesson.bookings.each do |booking| %>
-<%= booking.user.name %>
-<%= booking.participants %>
-<%= booking.status%>
-<% end %>
-</div>
-
-
-<div class="notification">
-  <img src='' class="avatar-large" />
-  <div class="notification-content">
-    <p><small>14th January</small></p>
-    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-  </div>
-
-  <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div>
-</div>
-
-<div class="notification">
-  <img src='' class="avatar-large"/>
-  <div class="notification-content">
-    <p><small>9th January</small></p>
-    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-  </div>
-
-  <div class="notification-actions">
-    <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-    <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-  </div>
+  <% lesson.bookings.each do |booking| %>
+    <div class="container">
+      <div class="notification">
+        <img src='' class="avatar-large" />
+        <div class="notification-content">
+          <p><small><%= booking.status%></small></p>
+          <p><%= booking.user.name %> </p>
+          <p>  <%= booking.participants %> Participants </p>
+        </div>
+        <div class="d-flex">
+        <% if booking.pending? %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+            <%= f.submit 'Accept', class: 'btn btn-info' %>
+          <% end %>
+          <%= simple_form_for booking do |f| %>
+            <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+            <%= f.submit 'Reject', class: 'btn btn-light' %>
+          <% end %>
+        <% else  %>
+        <p class='booking-tag'><%= booking.status.capitalize %></p>
+          <% end  %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
