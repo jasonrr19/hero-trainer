@@ -3,20 +3,7 @@
     <%= render 'search' %>
   </div>
   <div class="row">
-    <div class="col-2 filter-container">
-        <%= link_to "#filters", data: { bs_toggle: 'collapse' } do %>
-          <h5><i class="fa-solid fa-filter"></i></h5>
-        <% end %>
-
-        <div id="filters" class="collapse" tabindex="-1">
-          <%= link_to category: 'pilates' do  %>
-            <h3><i class="fa-solid fa-dumbbell"></i></h3>
-          <% end %>
-        </div>
-
-    </div>
-
-    <div class="col-6">
+    <div class="col-8">
       <% @lessons.each do |lesson| %>
         <div class="card-product mx-3 mb-2">
           <%= link_to lesson_path(lesson) do %>

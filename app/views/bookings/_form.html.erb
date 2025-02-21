@@ -1,5 +1,7 @@
 <%= simple_form_for [@lesson, @booking] do |f| %>
 <%= f.input :participants, placeholder: "Enter Number of Participants", input_html: { class: "white-placeholder" } %>
 <%= f.input :start_time, as: :datetime, html5: true %>
-<%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
+<div class="d-flex justify-content-between">
+  <%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
+</div>
 <% end %>

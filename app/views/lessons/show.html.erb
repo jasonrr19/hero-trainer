@@ -1,5 +1,5 @@
-  <%# <%= link_to 'Back', lesson_path(@lesson), class: 'm-4 btn btn-secondary rounded-4 text-black' %>
-<div class="container mt-1">
+  <%= link_to 'Back', lessons_path, class: 'm-4 btn btn-secondary rounded-4 text-white' %>
+  <div class="container mt-1">
   <div class="row">
     <div class="col-8">
       <div class="card-product border">
@@ -12,7 +12,7 @@
           <% else %>
             <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
           <% end %>
-          <h2>Price:  ¥<strong><%= @lesson.price %></strong></h2>
+          <h2>Price:  $<strong><%= @lesson.price %></strong></h2>
         </div>
       </div>
       <div class="card rounded">
