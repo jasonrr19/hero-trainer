@@ -16,4 +16,25 @@ class LessonsController < ApplicationController
     @trainer = @lesson.user
   end
 
+  def new
+    @lesson = Lesson.new
+  end
+
+  def create
+    @lesson = Lesson.new(lesson_params)
+    @lesson.user = current_user
+    if @lesson.save
+      redirect_to trainer_bookings_path, notice: "Lesson made!"
+    else
+      render :new, status: :unprocessable_entity
+    end
+
+  end
+
+  private
+
+  def lesson_params
+    params.require(:lesson).permit(:title, :description, :duration, :address, :price, :capacity)
+  end
+
 end
