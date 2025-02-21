@@ -12,7 +12,9 @@
   </div>
 </div>-->
 
-<div class="booking-form text-white my-5">
+<%= link_to 'Back', lesson_path(@lesson), class: 'ms-5 mt-2 btn btn-secondary rounded-4 text-white' %>
+
+<div class="booking-form text-white">
   <div class="form-header">
     <h2 class>Make a booking</h2>
   </div>
@@ -24,6 +26,6 @@
     <p>Duration: <%= @lesson.duration %> minutes</p>
     <h6>Price: <b><%= @lesson.price %>$</b></h6>
   </form>
-  <%= render 'bookings/form' %>
 
+  <%= render 'bookings/form' %>
 </div>
