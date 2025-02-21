@@ -42,3 +42,7 @@
 //   -webkit-transition: 0.2s all;
 //   transition: 0.2s all;
 // }
+.white-placeholder::placeholder {
+  color: white;
+  opacity: 0.5;
+}
