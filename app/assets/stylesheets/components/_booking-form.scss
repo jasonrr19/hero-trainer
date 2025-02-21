@@ -43,6 +43,7 @@
 //   transition: 0.2s all;
 // }
 
+
 .booking {
   display: flex;
   justify-content: space-between;
@@ -82,4 +83,8 @@
   .booking-info-details {
     font-weight: lighter;
   }
+
+.white-placeholder::placeholder {
+  color: white;
+  opacity: 0.5;
 }

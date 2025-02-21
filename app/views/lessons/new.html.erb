@@ -1,0 +1,15 @@
+<div class="booking-form text-white my-5">
+  <div class="form-header">
+    <h2 class>Create a lesson</h2>
+  </div>
+  <%= simple_form_for [@user, @lesson] do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :duration %>
+    <%= f.input :address %>
+    <%= f.input :price %>
+    <%= f.input :capacity %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
+  <% end %>
+</div>
