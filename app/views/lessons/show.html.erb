@@ -36,7 +36,7 @@
       <div class="card-product-infos">
         <h1><%= @trainer.name %></h1>
         <% if @trainer.photo.attached? %>
-            <%= cl_image_tag @trainer.photo.key, height: 300, width: 400, crop: :fill %>
+            <%= cl_image_tag @trainer.photo.key, gravity: "face", height: 300, width: 400, crop: :fill %>
         <% else %>
           <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
         <% end %>
