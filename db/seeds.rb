@@ -16,7 +16,9 @@ Lesson.destroy_all
 User.destroy_all
 
 CATEGORIES = ["Martial Arts", "Bodybuilding", "Sprinting", "Boxing", "Endurance", "Combat Training", "Tactical Combat", "Dance"]
-
+DURATION = [30, 60, 90]
+PRICE = [50, 75, 100, 150]
+CAPACITY = [4, 6 , 8, 10]
 puts "Creating trainers..."
 
 trainers = [
@@ -185,9 +187,9 @@ trainers.each do |trainer|
     user: user,
     title: "#{trainer[:name]}'s #{trainer[:category]} Class",
     description: "Train with #{trainer[:name]} to master #{trainer[:specialties].downcase}.",
-    duration: rand(30..60),
-    price: rand(50..150),
-    capacity: rand(5..20),
+    duration: DURATION.sample,
+    price: PRICE.sample,
+    capacity: CAPACITY.sample,
     category: trainer[:category],
     address: trainer[:address]
   )
