@@ -1,6 +1,6 @@
 <div class="booking-form text-white my-5">
   <div class="form-header">
-<%= link_to 'Back', lesson_path(@lesson), class: 'btn btn-danger' %>
+<%= link_to 'Back', trainer_bookings_path(), class: 'btn btn-danger' %>
     <h2 class>Create a lesson</h2>
   </div>
   <%= simple_form_for [@user, @lesson] do |f| %>
@@ -10,7 +10,7 @@
     <%= f.input :address %>
     <%= f.input :price %>
     <%= f.input :capacity %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Submit', class: 'btn btn-success mt-2' %>
   <% end %>
 </div>
