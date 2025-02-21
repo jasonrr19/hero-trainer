@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :show]
 
+  resources :bookings, only: [:update]
+
 
   get 'dashboard', to: 'dashboard#dashboard'
   # Defines the root path route ("/")
