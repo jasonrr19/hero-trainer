@@ -19,6 +19,17 @@ CATEGORIES = ["Martial Arts", "Bodybuilding", "Sprinting", "Boxing", "Endurance"
 DURATION = [30, 60, 90]
 PRICE = [50, 75, 100, 150]
 CAPACITY = [4, 6 , 8, 10]
+
+CATEGORIESIMAGES = {
+  "Martial Arts" => "bruce-lee",
+  "Bodybuilding" => "arnold",
+  "Sprinting" => "sprinting",
+  "Boxing" => "boxing",
+  "Endurance" => "gokuss",
+  "Combat Training" => "chun-lee",
+  "Tactical Combat" => "martial",
+  "Dance" => "dancing"
+}
 puts "Creating trainers..."
 
 trainers = [
@@ -165,10 +176,21 @@ trainers = [
     category: "Sprinting",
     address: "日本, 〒150-0044 東京都渋谷区円山町２番９号",
     image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Usain_Bolt_Rio_100m_final_2016k.jpg"
+  },
+  {
+    name: "Martin",
+    email: "martin@hero.com",
+    password: "123123",
+    bio: "Martin is a social and outgoing person who loves the nightlife scene. He enjoys going to nightclubs, meeting new people, and having a great time with friends.",
+    experience: "Experienced in nightlife, socializing, partying, dating, and making new connections.",
+    specialties: "Nightlife Navigation, Social Charisma, Dating Expertise",
+    category: "Bodybuilding",
+    address: "日本, 〒150-0043 東京都渋谷区道玄坂１丁目２番",
+    image: "https://ca.slack-edge.com/T02NE0241-U08796W87GV-53fdd2ece44a-512"
   }
 ]
 
-trainers.each do |trainer|
+trainers.each_with_index do |trainer, index|
   user = User.new(
     name: trainer[:name],
     email: trainer[:email],
@@ -183,7 +205,7 @@ trainers.each do |trainer|
   user.photo.attach(io: file, filename: "#{trainer[:name]}.png", content_type: "image/png")
   user.save
 
-  Lesson.create!(
+  lesson = Lesson.new(
     user: user,
     title: "#{trainer[:name]}'s #{trainer[:category]} Class",
     description: "Train with #{trainer[:name]} to master #{trainer[:specialties].downcase}.",
@@ -193,6 +215,10 @@ trainers.each do |trainer|
     category: trainer[:category],
     address: trainer[:address]
   )
+  file = File.open(Rails.root.join("app/assets/images/#{CATEGORIESIMAGES[trainer[:category]]}.png"), "rb")
+  lesson.photos.attach(io: file, filename: "#{CATEGORIESIMAGES[trainer[:category]]}.png", content_type: "image/png")
+  lesson.save
 end
+
 
 puts "Created #{User.count} trainers with lessons in Shibuya, Tokyo!"
