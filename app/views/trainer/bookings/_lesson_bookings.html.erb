@@ -1,12 +1,14 @@
-<div>
+<div style="margin-left: auto; width: 95%">
   <% lesson.bookings.each do |booking| %>
     <div class="container">
       <div class="notification">
         <img src='' class="avatar-large" />
         <div class="notification-content">
-          <p><small><%= booking.status.capitalize%></small></p>
           <p><%= booking.user.name %> </p>
-          <p>  <%= booking.participants %> Participants </p>
+          <p>
+            <i class="fa-solid fa-person"></i>
+            <%= booking.participants %>
+          </p>
         </div>
         <div class="d-flex">
         <% if booking.pending? %>
