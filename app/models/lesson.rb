@@ -1,4 +1,10 @@
 class Lesson < ApplicationRecord
+  include PgSearch::Model
+  # mudar para :search_by_title
+  pg_search_scope :search_by_title_and_category,
+                  against: [ :title, :category ], # só :title
+                  using: { tsearch: { prefix: true } }
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   has_many :reviews

@@ -1,5 +1,6 @@
 <div class="booking-form text-white my-5">
   <div class="form-header">
+<%= link_to 'Back', lesson_path(@lesson), class: 'btn btn-danger' %>
     <h2 class>Create a lesson</h2>
   </div>
   <%= simple_form_for [@user, @lesson] do |f| %>

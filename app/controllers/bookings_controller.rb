@@ -15,12 +15,20 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
-    # a
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to trainer_bookings_path
+    else
+      render :edit, status: unprocessable_entity
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_time, :participants)
+    params.require(:booking).permit(:start_time, :participants, :status)
   end
 end
