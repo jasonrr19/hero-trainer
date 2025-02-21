@@ -18,7 +18,7 @@
               <br>
               <%= lesson.category %>
               <br>
-              <%= lesson.user.name.titleize %>
+              <%= lesson.user.name.titleize if lesson.user.name %>
               <br>
               <%= lesson.duration.round(-1) %>
             </div>
