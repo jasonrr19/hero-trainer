@@ -10,5 +10,5 @@ class User < ApplicationRecord
   # validates :bio, presence: true, length: { minimum: 10, maximum: 360 }
   # validates :experience, length: { minimum: 10, maximum: 500 }
   # validates :specialties, length: { minimum: 10, maximum: 200 }
-  has_many_attached :photos
+  has_one_attached :photo
 end

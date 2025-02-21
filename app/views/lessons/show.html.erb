@@ -35,11 +35,9 @@
     <div class="card-product w-25 ms-2 border rounded align-items-center">
       <div class="card-product-infos">
         <h1><%= @trainer.name %></h1>
- <% if @trainer.photos.attached? %>
+  <% if @trainer.photo.attached? %>
+  <%= cl_image_tag @trainer.photo.key, gravity: "face", height: 300, width: 400, crop: :fill %>
 
-          <% @trainer.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
 <% else %>
   <%= image_tag 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>
 <% end %>
