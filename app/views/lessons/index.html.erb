@@ -4,10 +4,18 @@
   </div>
   <div class="row">
     <div class="col-2 filter-container">
-      <div class="btn-primary btn">
-        Yoga
-      </div>
+        <%= link_to "#filters", data: { bs_toggle: 'collapse' } do %>
+          <h5><i class="fa-solid fa-filter"></i></h5>
+        <% end %>
+
+        <div id="filters" class="collapse" tabindex="-1">
+          <%= link_to category: 'pilates' do  %>
+            <h3><i class="fa-solid fa-dumbbell"></i></h3>
+          <% end %>
+        </div>
+
     </div>
+
     <div class="col-6">
       <% @lessons.each do |lesson| %>
         <div class="card-product mx-3 mb-2">
@@ -20,6 +28,8 @@
 
             <div class="card-product-infos">
               <%= lesson.title.titleize %>
+              <br>
+              <%= lesson.category %>
               <br>
               <%= lesson.user.name.titleize %>
               <br>

@@ -2,10 +2,10 @@ class LessonsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    # raise
     @lessons = Lesson.all
     if params[:query].present?
-      @lessons = Lesson.search_by_title(params[:query])
+      # talvez mudar para search_by_title apenas
+      @lessons = Lesson.search_by_title_and_category(params[:query])
     end
     @markers = @lessons.geocoded.map do |lesson|
       {

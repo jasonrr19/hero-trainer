@@ -1,7 +1,8 @@
 class Lesson < ApplicationRecord
   include PgSearch::Model
-  pg_search_scope :search_by_title,
-                  against: :title,
+  # mudar para :search_by_title
+  pg_search_scope :search_by_title_and_category,
+                  against: [ :title, :category ], # só :title
                   using: { tsearch: { prefix: true } }
 
   belongs_to :user
