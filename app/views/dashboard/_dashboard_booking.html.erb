@@ -1,7 +1,7 @@
 <% @bookings.each do |booking| %>
   <div class="card-booking">
     <% if booking.lesson.photos.attached? %>
-              <%= cl_image_tag lesson.photos.first.key, height: 120, width: 120, crop: :fill, class: "" %>
+              <%= cl_image_tag booking.lesson.photos.first.key, height: 120, width: 120, crop: :fill, class: "" %>
             <% else %>
               <%= image_tag 'https://hips.hearstapps.com/hmg-prod/images/mh-trainer-2-1533576998.png', class: 'w-100' %>
             <% end %>
